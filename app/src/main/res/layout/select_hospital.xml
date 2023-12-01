@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
+
+    <!--병원이미지-->
+    <RelativeLayout
+        android:id="@+id/rv0"
+        android:layout_width="362dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="55dp">
+        <TextView
+            android:id="@+id/hos_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="용산정형외과"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/hos_name"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:src="@android:drawable/ic_menu_gallery" />
+    </RelativeLayout>
+
+    <!--진료시간-->
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rv0"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/time_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/doc_time"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/time_title"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/lightgrey">
+
+            <TextView
+                android:id="@+id/time_first"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical|right"
+                android:inputType="text"
+                android:text="진료시간"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/time_first_num"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/time_first"
+                android:gravity="left|center_vertical"
+                android:text="10:00~19:00"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/time_second_num"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/time_first_num"
+                android:gravity="center_vertical|right"
+                android:text="휴게시간"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/time_second_num"
+                android:gravity="left|center_vertical"
+                android:inputType="text"
+                android:text="13:00~14:00"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--의사정보-->
+    <RelativeLayout
+        android:id="@+id/rv2"
+        android:layout_width="362dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/rl1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/doc_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/doctor_info"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/doc_title"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/lightgrey">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="left|center_vertical"
+                android:text="ㅇㅇ대학교 의과대학 졸업 기타 등등"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--진료과목-->
+    <RelativeLayout
+        android:id="@+id/rv3"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rv2"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/majot_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/doc_major"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/majot_title"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/lightgrey">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="left|center_vertical"
+                android:text="정형외과"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--병원소개-->
+    <RelativeLayout
+        android:id="@id/rv4"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rv3"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/hos_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="병원소개"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/hos_title"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/lightgrey">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="left|center_vertical"
+                android:text="안녕하세요"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--병원 위치-->
+    <RelativeLayout
+        android:id="@+id/rv5"
+        android:layout_width="362dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/rv4"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/hos_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="병원 위치"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_below="@+id/hos_loc"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/lightgrey">
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--병원 전화번호-->
+    <RelativeLayout
+        android:id="@+id/rv6"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rv5"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/hos_pn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="병원 전화번호"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/hos_pn"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/lightgrey">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="left|center_vertical"
+                android:text="02-1111-2222"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--근처 약국-->
+    <RelativeLayout
+        android:id="@+id/rv7"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rv6"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="9dp">
+
+        <TextView
+            android:id="@+id/near_phar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="근처 약국"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/near_phar"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/lightgrey">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="left|center_vertical"
+                android:text="눈송이 약국"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--후기-->
+    <RelativeLayout
+        android:id="@+id/rv8"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rv7"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/rv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="후기"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/rv_title"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/lightgrey">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="left|center_vertical"
+                android:text="후기 게시글"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/reserv_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/blue"
+        android:text="예약하기"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
