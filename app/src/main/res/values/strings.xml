@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">hellocare_project</string>
+    <string name="title_name">헬로케어</string>
     <string name="name">이름</string>
     <string name="sign_birth">생년월일</string>
     <string name="sign_id">아이디</string>
@@ -8,6 +9,10 @@
     <string name="sign_type">유형</string>
     <string name="sign_gender">성별</string>
     <string name="signin">회원가입</string>
+
+    <string name="find_id_name">아이디 찾기</string>
+    <string name="find_pw_name">비밀번호 찾기</string>
+    <string name="enter_name">로그인</string>
 
     <string name="license">면허증</string>
     <string name="license_ex">면허증을 첨부해주세요</string>
