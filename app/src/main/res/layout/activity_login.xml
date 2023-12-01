@@ -120,7 +120,7 @@
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/enter_name"
         android:textColor="@color/white"
-        android:backgroundTint="#2980f2" />
+        android:backgroundTint="@color/blue" />
 
     <!--회원가입-->
     <RelativeLayout
@@ -145,7 +145,7 @@
             android:layout_marginStart="10dp"
             android:text="@string/signin"
             android:textSize="13sp"
-            android:textColor="#2980f2" />
+            android:textColor="@color/blue" />
     </RelativeLayout>
 
 </RelativeLayout>

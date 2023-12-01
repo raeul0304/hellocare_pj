@@ -6,6 +6,13 @@
     <string name="sign_id">아이디</string>
     <string name="sign_pw">비밀번호</string>
     <string name="sign_pwcheck">비밀번호 확인</string>
+
+    <string name="argree_ex_text">
+    고객님께서는 동의를 거부할 수 있습니다.\n
+    단, 필수항목 동의 거부 시에는 회원가입이 제한됩니다.\n\n
+    약관동의 후 본인인증을 진행해야 회원가입이 가능합니다.
+    </string>
+
     <string name="sign_type">유형</string>
     <string name="sign_gender">성별</string>
     <string name="signin">회원가입</string>

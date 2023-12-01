@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="165dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="약관동의"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/title_image"
+        android:layout_width="212dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/app_icon" />
+
+    <TextView
+        android:layout_width="252dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="255dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="헬로커어에 오신 것을 환영합니다!"
+        android:textSize="17sp" />
+
+    <CheckBox
+        android:id="@+id/CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="290dp"
+        android:text="전체동의" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="370dp"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="345dp"
+        android:background="#000000" />
+
+    <CheckBox
+        android:id="@+id/CheckBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="400dp"
+        android:text="(필수) 개인정보 수집 및 이용 동의서" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="370dp"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="455dp"
+        android:background="#000000" />
+
+    <CheckBox
+        android:id="@+id/CheckBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="460dp"
+        android:text="(선택) 제 3 자 정보 제공 동의" />
+
+    <TextView
+        android:id="@+id/agree_ex_text"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="521dp"
+        android:gravity="center|left"
+        android:text="@string/argree_ex_text"
+        android:textSize="12sp"
+        android:textColor="#6C6B6B"/>
+
+    <CheckBox
+        android:id="@+id/CheckBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="350dp"
+        android:text="(필수) 헬로케어 이용약관 동의" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="약관 동의 및 본인 인증"
+        android:textColor="@color/white"
+        android:backgroundTint="#2980f2" />
+
+</RelativeLayout>
