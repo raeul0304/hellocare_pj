@@ -1,3 +1,31 @@
 <resources>
-    <string name="app_name">hellocare_pj</string>
+    <string name="app_name">hellocare_project</string>
+    <string name="name">이름</string>
+    <string name="sign_birth">생년월일</string>
+    <string name="sign_id">아이디</string>
+    <string name="sign_pw">비밀번호</string>
+    <string name="sign_pwcheck">비밀번호 확인</string>
+    <string name="sign_type">유형</string>
+    <string name="sign_gender">성별</string>
+    <string name="signin">회원가입</string>
+
+    <string name="license">면허증</string>
+    <string name="license_ex">면허증을 첨부해주세요</string>
+    <string name="hospital">병원명</string>
+    <string name="hosptial_ex">병원명을 입력해주세요</string>
+    <string name="address">주소</string>
+    <string name="location">지역명</string>
+    <string name="add_detail">상세주소 입력</string>
+    <string name="doctor_info">의사정보</string>
+    <string name="academic_record">학력</string>
+    <string name="doc_major">진료과목</string>
+    <string name="greeting">인사말</string>
+    <string name="doc_time">진료시간</string>
+    <string name="doc_time_detail">진료시간을 선택해주세요</string>
+
+    <string name="pharmacy">약국명</string>
+    <string name="phar_ex">약국명을 입력해주세요</string>
+    <string name="phar_info">약사정보</string>
+    <string name="phar_time">영업시간</string>
+    <string name="phar_time_detail">영업시간을 선택해주세요</string>
 </resources>

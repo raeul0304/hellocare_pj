@@ -1,55 +1,79 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/signin_main"
+    android:id="@+id/signin_doc"
     android:layout_width="412dp"
     android:layout_height="732dp"
     android:clipToOutline="true"
     android:background="#FFFFFF">
 
+    <Button
+        android:id="@+id/sign_docbtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/blue"
+        android:text="@string/signin"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
     <TextView
-        android:id="@+id/signin_title"
-        android:layout_width="85dp"
+        android:id="@+id/signdoc_title"
+        android:layout_width="100dp"
         android:layout_height="26dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="164dp"
         android:layout_marginTop="38dp"
         android:gravity="center"
-        android:text="회원가입"
+        android:text="정보 입력"
         android:textSize="20sp"
         android:textStyle="bold" />
     <RelativeLayout
-        android:id="@+id/signname"
+        android:id="@+id/signdoc_license"
         android:layout_width="366dp"
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="24dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="98dp">
+
         <TextView
-            android:id="@+id/txt_signname"
-            android:layout_width="31.78dp"
-            android:layout_height="17.86dp"
+            android:id="@+id/txt_license"
+            android:layout_width="59dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="3dp"
             android:layout_marginTop="3dp"
             android:gravity="top"
-            android:text="@string/name"/>
+            android:text="@string/license" />
         <EditText
-            android:id="@+id/signname_editline"
+            android:id="@+id/license_editline"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:ems="10"
             android:inputType="text"
-            android:text="실명을 입력하세요"
+            android:text="@string/license_ex"
             android:textSize="10dp"
             android:textColor="@color/grey"
             android:layout_alignParentBottom="true"/>
+
+        <Button
+            android:id="@+id/license_plusbtn"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="@color/white"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="+"
+            android:textColor="@color/black"
+            app:iconPadding="0dp" />
     </RelativeLayout>
     <RelativeLayout
-        android:id="@+id/signbirth"
+        android:id="@+id/sign_hospital"
         android:layout_width="366dp"
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
@@ -57,7 +81,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="174dp">
         <TextView
-            android:id="@+id/txt_signbirth"
+            android:id="@+id/txt_hospital"
             android:layout_width="57.67dp"
             android:layout_height="17.86dp"
             android:layout_alignParentLeft="true"
@@ -65,28 +89,28 @@
             android:layout_marginLeft="3dp"
             android:layout_marginTop="3dp"
             android:gravity="top"
-            android:text="@string/sign_birth"/>
+            android:text="@string/hospital"/>
         <EditText
-            android:id="@+id/signbirth_editline"
+            android:id="@+id/hospital_editline"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:ems="10"
             android:inputType="text"
-            android:text="생년월일을 입력하세요(ex.2000-03-04)"
+            android:text="@string/hosptial_ex"
             android:textSize="10dp"
             android:textColor="@color/grey"
             android:layout_alignParentBottom="true"/>
     </RelativeLayout>
     <RelativeLayout
-        android:id="@+id/sign_id"
+        android:id="@+id/doc_address"
         android:layout_width="366dp"
-        android:layout_height="60dp"
+        android:layout_height="90dp"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="24dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="250dp">
         <TextView
-            android:id="@+id/txt_id"
+            android:id="@+id/txt_doc_add"
             android:layout_width="57.67dp"
             android:layout_height="17.86dp"
             android:layout_alignParentLeft="true"
@@ -94,187 +118,158 @@
             android:layout_marginLeft="3dp"
             android:layout_marginTop="3dp"
             android:gravity="top"
-            android:text="@string/sign_id"/>
+            android:text="@string/address"/>
         <EditText
-            android:id="@+id/id_editline"
+            android:id="@+id/location_editline"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="19dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="@string/location"
+            android:textSize="10dp"
+            android:textColor="@color/grey"/>
+        <Button
+            android:id="@+id/location_serachbtn"
+            android:layout_width="66dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="19dp"
+            android:layout_alignParentRight="true"
+            android:text="찾기"
+            android:textSize="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:padding="5sp"
+            android:backgroundTint="#BAB6B6"/>
+        <EditText
+            android:id="@+id/address_editline"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:ems="10"
             android:inputType="text"
-            android:text="아이디를 입력하세요"
+            android:text="@string/add_detail"
             android:textSize="10dp"
             android:textColor="@color/grey"
             android:layout_alignParentBottom="true"/>
     </RelativeLayout>
     <RelativeLayout
-        android:id="@+id/sign_pw"
+        android:id="@+id/doctor_info"
         android:layout_width="366dp"
-        android:layout_height="60dp"
+        android:layout_height="90dp"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="24dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="326dp">
-        <TextView
-            android:id="@+id/txt_pw"
-            android:layout_width="57.67dp"
-            android:layout_height="17.86dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="3dp"
-            android:gravity="top"
-            android:text="@string/sign_pw"/>
-        <EditText
-            android:id="@+id/pw_editline"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="비밀번호를 입력하세요"
-            android:textSize="10dp"
-            android:textColor="@color/grey"
-            android:layout_alignParentBottom="true"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/sign_pwcheck"
-        android:layout_width="366dp"
-        android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="24dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="402dp">
-        <TextView
-            android:id="@+id/txt_pwcheck"
-            android:layout_width="115dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="3dp"
-            android:gravity="top"
-            android:text="@string/sign_pwcheck"/>
-        <EditText
-            android:id="@+id/pwcheck_editline"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="비밀번호 확인"
-            android:textSize="10dp"
-            android:textColor="@color/grey"
-            android:layout_alignParentBottom="true"/>
-    </RelativeLayout>
+        android:layout_marginTop="363dp">
 
+        <Button
+            android:id="@+id/doc_plusbtn2"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="@color/white"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="+"
+            android:textColor="@color/black"
+            app:iconPadding="0dp" />
+
+        <TextView
+            android:id="@+id/txt_doctor"
+            android:layout_width="57.67dp"
+            android:layout_height="17.86dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:gravity="top"
+            android:text="@string/doctor_info"/>
+        <EditText
+            android:id="@+id/docname_editline"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="19dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="@string/name"
+            android:textSize="10dp"
+            android:textColor="@color/grey" />
+        <EditText
+            android:id="@+id/doc_acad_editline"
+            android:layout_width="266dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="19dp"
+            android:layout_alignParentRight="true"
+            android:text="@string/academic_record"
+            android:textSize="10dp"
+            android:textColor="@color/grey"/>
+        <EditText
+            android:id="@+id/doc_greet_editline"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="@string/greeting"
+            android:textSize="10dp"
+            android:textColor="@color/grey"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
     <RelativeLayout
-        android:id="@+id/sign_type"
-        android:layout_width="365dp"
-        android:layout_height="77dp"
+        android:id="@+id/doc_major"
+        android:layout_width="366dp"
+        android:layout_height="60dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_marginLeft="24dp"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="478dp">
-
         <TextView
-            android:id="@+id/txt_type"
-            android:layout_width="115dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/txt_docmajor"
+            android:layout_width="57.67dp"
+            android:layout_height="17.86dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="3dp"
             android:layout_marginTop="3dp"
             android:gravity="top"
-            android:text="@string/sign_type" />
-
-        <RadioGroup
+            android:text="@string/doc_major"/>
+        <EditText
+            android:id="@+id/docmajor_editline"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="40dp"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/type_normal"
-                android:layout_width="40dp"
-                android:layout_height="26dp"
-                android:layout_weight="1"
-                android:text="일반"
-                android:textSize="13sp"/>
-
-            <RadioButton
-                android:id="@+id/type_doc"
-                android:layout_width="40dp"
-                android:layout_height="26dp"
-                android:layout_marginBottom="1dp"
-                android:layout_weight="1"
-                android:text="의사"
-                android:textSize="13sp"/>
-
-            <RadioButton
-                android:id="@+id/type_phar"
-                android:layout_width="40dp"
-                android:layout_height="26dp"
-                android:layout_weight="1"
-                android:text="약사"
-                android:textSize="13sp"/>
-        </RadioGroup>
+            android:layout_height="40dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="진료과목을 작성해주세요"
+            android:textSize="10dp"
+            android:textColor="@color/grey"
+            android:layout_alignParentBottom="true"/>
     </RelativeLayout>
-
     <RelativeLayout
-        android:id="@+id/sign_gender"
-        android:layout_width="365dp"
-        android:layout_height="77dp"
+        android:id="@+id/doc_time"
+        android:layout_width="366dp"
+        android:layout_height="60dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="570dp">
-
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="551dp">
         <TextView
-            android:id="@+id/txt_gender"
-            android:layout_width="115dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/txt_doctime"
+            android:layout_width="57.67dp"
+            android:layout_height="17.86dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="3dp"
             android:layout_marginTop="3dp"
             android:gravity="top"
-            android:text="@string/sign_gender" />
-
-        <RadioGroup
+            android:text="@string/doc_time"/>
+        <EditText
+            android:id="@+id/doctime_editline"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="40dp"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/gen_female"
-                android:layout_width="40dp"
-                android:layout_height="26dp"
-                android:layout_weight="2"
-                android:text="여성"
-                android:textSize="13sp" />
-
-            <RadioButton
-                android:id="@+id/gen_male"
-                android:layout_width="40dp"
-                android:layout_height="26dp"
-                android:layout_marginBottom="1dp"
-                android:layout_weight="5"
-                android:text="남성"
-                android:textSize="13sp"/>
-        </RadioGroup>
+            android:layout_height="40dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="@string/doc_time_detail"
+            android:textSize="10dp"
+            android:textColor="@color/grey"
+            android:layout_alignParentBottom="true"/>
     </RelativeLayout>
-
-    <Button
-        android:id="@+id/sign_nextbtn"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:backgroundTint="@color/blue"
-        android:text="다음"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-         />
 </RelativeLayout>
