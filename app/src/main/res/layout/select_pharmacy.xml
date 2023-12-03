@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
+
+    <include layout="@layout/hellocare_titleicon"/>
+    <!--병원이미지-->
+    <RelativeLayout
+        android:id="@+id/rv0"
+        android:layout_width="362dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="55dp">
+        <TextView
+            android:id="@+id/phar_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="용용약국"
+            android:textColor="@color/black"/>
+        <ImageButton
+            android:id="@+id/heartbtn"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:padding="0dp"
+            android:src="@drawable/hearticon"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/phar_name"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:src="@android:drawable/ic_menu_gallery" />
+    </RelativeLayout>
+
+    <!--진료시간-->
+    <RelativeLayout
+        android:id="@+id/pr1"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rv0"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/ptime_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/phar_time"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/ptime_title"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/whitegrey">
+
+            <TextView
+                android:id="@+id/ptime_first"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical|right"
+                android:inputType="text"
+                android:text="영업시간"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/ptime_first_num"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/ptime_first"
+                android:gravity="left|center_vertical"
+                android:text="10:00~19:00"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/ptime_second_num"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/ptime_first_num"
+                android:gravity="center_vertical|right"
+                android:text="휴게시간"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/ptime_second_num"
+                android:gravity="left|center_vertical"
+                android:inputType="text"
+                android:text="13:00~14:00"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--약사정보-->
+    <RelativeLayout
+        android:id="@+id/pr2"
+        android:layout_width="362dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/pr1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/phar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/phar_info"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/phar_title"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/whitegrey">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="left|center_vertical"
+                android:text="홍길동 약사    00대학교"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--약국소개-->
+    <RelativeLayout
+        android:id="@id/pr4"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/pr2"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/txt_pharinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="약국소개"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/txt_pharinfo"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/whitegrey">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="left|center_vertical"
+                android:text="안녕하세요"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--약국 위치-->
+    <RelativeLayout
+        android:id="@+id/pr5"
+        android:layout_width="362dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/pr4"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/phar_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="약국 위치"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_below="@+id/phar_loc"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/whitegrey">
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--약국 전화번호-->
+    <RelativeLayout
+        android:id="@+id/pr6"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/pr5"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/phar_pn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="약국 전화번호"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/phar_pn"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/whitegrey">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="left|center_vertical"
+                android:text="02-1111-2222"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--후기-->
+    <RelativeLayout
+        android:id="@+id/pr8"
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/pr6"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/prv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="후기"
+            android:textColor="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/prv_title"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/whitegrey">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="left|center_vertical"
+                android:text="후기 게시글"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
