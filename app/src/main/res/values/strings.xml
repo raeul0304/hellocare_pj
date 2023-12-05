@@ -112,4 +112,13 @@
 ....
     </string>
     <string name="agree_three_text">일단은 내용을 비워둠</string>
+    <string name="healthboard">건강 정보통</string>
+    <string name="health_info1">원인 모를 발목 통증? "부주상골 증후군" 통증, 수술, 치료법</string>
+    <string name="health_info2">빈대 물리면 증상이 어떻게 되나요?</string>
+    <string name="health_info3">모공각화증, 각질이 쌓이는 원인을 없애야...</string>
+    <string name="health_info4">혼자만의 세계에 갇힌 아이, "자페증" 증상과 치료법</string>
+    <string name="health_info5">생리 중 성관계하면 임신 안된다? NO</string>
+    <string name="health_info6">긁히면 피부 부풀어 오르는 "피부 묘기증", 냉찜질로 가라앉혀야</string>
+    <string name="health_info7">"눈꺼풀 여드름"안검염, 만성 안구 건조증으로?</string>
+    <string name="health_info8">뒤로 젖힐 때 허리 아프다면? "척추분리증" 의심해야</string>
 </resources>

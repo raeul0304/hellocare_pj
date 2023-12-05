@@ -267,11 +267,12 @@
         </RadioGroup>
     </RelativeLayout>
 
-    <Button
+    <android.widget.Button
         android:id="@+id/sign_nextbtn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
+        android:background="@drawable/rectangle_style"
         android:backgroundTint="@color/blue"
         android:text="다음"
         android:textAlignment="center"
