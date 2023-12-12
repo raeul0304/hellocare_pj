@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/hellocare_titleicon" />
+
+    <!--병원지도-->
+    <RelativeLayout
+        android:id="@+id/map1"
+        android:layout_width="362dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="55dp">
+        <TextView
+            android:id="@+id/map_hos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="정형외과"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@+id/map_hos"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:src="@android:drawable/ic_dialog_map" />
+    </RelativeLayout>
+
+    <!--선택 버튼-->
+    <RelativeLayout
+        android:id="@+id/loc_map"
+        android:layout_width="362dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/map1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+
+        <android.widget.Button
+            android:id="@+id/map_btn1"
+            android:layout_width="170dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:background="#CFE2FC"
+            android:textColor="@color/black"
+            android:drawableLeft="@drawable/loc_resize"
+            android:text="내 위치"/>
+
+        <android.widget.Button
+            android:layout_width="170dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@+id/map_btn1"
+            android:background="#CFE2FC"
+            android:textColor="@color/black"
+            android:drawableLeft="@drawable/map_resize"
+            android:text="지도에서 선택"/>
+    </RelativeLayout>
+
+    <!--지도에서 불러온 병원 정보-->
+    <RelativeLayout
+        android:layout_width="362dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loc_map"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/info_text1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+            android:gravity="left|center_vertical"
+            android:text="병원 정보"
+            android:background="@color/grey"
+            android:textColor="@color/black"
+            android:textSize="10dp" />
+        <TextView
+            android:id="@+id/info_text2"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/info_text1"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:gravity="left|center_vertical"
+            android:text="병원 정보"
+            android:background="@color/grey"
+            android:textColor="@color/black"
+            android:textSize="10dp" />
+        <TextView
+            android:id="@+id/info_text3"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/info_text2"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:gravity="left|center_vertical"
+            android:text="병원 정보"
+            android:background="@color/grey"
+            android:textColor="@color/black"
+            android:textSize="10dp" />
+    </RelativeLayout>
+</RelativeLayout>

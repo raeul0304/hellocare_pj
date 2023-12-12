@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:scrollbarAlwaysDrawVerticalTrack="true">
 
+    <include layout="@layout/hellocare_titleicon" />
+
     <!--병원이미지-->
     <RelativeLayout
         android:id="@+id/rv0"
