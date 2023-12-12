@@ -16,6 +16,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        //파이어베이스 작업
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -56,6 +58,8 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
 
     // Add the dependencies for any other desired Firebase products
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("androidx.multidex:multidex:2.0.1")
     // https://firebase.google.com/docs/android/setup#available-libraries
-    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-auth-ktx:22.3.0")
 }

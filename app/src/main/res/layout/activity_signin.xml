@@ -19,6 +19,7 @@
         android:text="회원가입"
         android:textSize="20sp"
         android:textStyle="bold" />
+    <!-- 이름 입력 -->
     <RelativeLayout
         android:id="@+id/signname"
         android:layout_width="366dp"
@@ -48,6 +49,7 @@
             android:textColor="@color/grey"
             android:layout_alignParentBottom="true"/>
     </RelativeLayout>
+    <!-- 생년월일 입력 -->
     <RelativeLayout
         android:id="@+id/signbirth"
         android:layout_width="366dp"
@@ -77,6 +79,7 @@
             android:textColor="@color/grey"
             android:layout_alignParentBottom="true"/>
     </RelativeLayout>
+    <!-- 회원가입 아이디/비번 (실제 메일) -->
     <RelativeLayout
         android:id="@+id/sign_id"
         android:layout_width="366dp"
@@ -101,7 +104,7 @@
             android:layout_height="40dp"
             android:ems="10"
             android:inputType="text"
-            android:text="아이디를 입력하세요"
+            android:text="실제 이메일 주소를 입력하세요"
             android:textSize="10dp"
             android:textColor="@color/grey"
             android:layout_alignParentBottom="true"/>
@@ -130,36 +133,7 @@
             android:layout_height="40dp"
             android:ems="10"
             android:inputType="text"
-            android:text="비밀번호를 입력하세요"
-            android:textSize="10dp"
-            android:textColor="@color/grey"
-            android:layout_alignParentBottom="true"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/sign_pwcheck"
-        android:layout_width="366dp"
-        android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="24dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="402dp">
-        <TextView
-            android:id="@+id/txt_pwcheck"
-            android:layout_width="115dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="3dp"
-            android:gravity="top"
-            android:text="@string/sign_pwcheck"/>
-        <EditText
-            android:id="@+id/pwcheck_editline"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="비밀번호 확인"
+            android:text="실제 이메일의 비밀번호를 입력하세요"
             android:textSize="10dp"
             android:textColor="@color/grey"
             android:layout_alignParentBottom="true"/>
@@ -172,7 +146,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="478dp">
+        android:layout_marginTop="402dp">
 
         <TextView
             android:id="@+id/txt_type"
@@ -227,7 +201,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="570dp">
+        android:layout_marginTop="485dp">
 
         <TextView
             android:id="@+id/txt_gender"
