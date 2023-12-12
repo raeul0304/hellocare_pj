@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "175743136180",
+    "project_id": "hellocare-pj",
+    "storage_bucket": "hellocare-pj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175743136180:android:9906526e24a04d4064c2e1",
+        "android_client_info": {
+          "package_name": "com.example.hellocare_pj"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6zShiT38DcOxBkIAxZkdN8fzWXw6-VAY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
