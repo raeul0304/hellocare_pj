@@ -3,12 +3,17 @@ package com.example.hellocare_pj
 import android.content.Intent
 import android.location.Location
 import android.content.pm.PackageManager
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.hellocare_pj.databinding.ActivityMainBinding
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApi
@@ -24,6 +29,7 @@ import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.tasks.OnSuccessListener
+import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -32,15 +38,18 @@ class MainActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks,
     GoogleApiClient.OnConnectionFailedListener, OnMapReadyCallback{
 
     lateinit var binding: ActivityMainBinding
-    //lateinit var adapter: MyAdapter
 
     lateinit var providerClient: FusedLocationProviderClient
     lateinit var apiClient: GoogleApiClient
     var googleMap: GoogleMap?=null
 
+    private lateinit var tabLayout: TabLayout
+    private lateinit var frameLayout: FrameLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_map)
+        binding= ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
         //지도 api
