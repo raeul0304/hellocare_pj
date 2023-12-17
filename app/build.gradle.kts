@@ -62,4 +62,8 @@ dependencies {
     implementation("androidx.multidex:multidex:2.0.1")
     // https://firebase.google.com/docs/android/setup#available-libraries
     implementation("com.google.firebase:firebase-auth-ktx:22.3.0")
+
+
+    implementation("com.google.android.gms:play-services-maps:17.0.0")
+    implementation("com.google.android.gms:play-services-location:17.0.0")
 }

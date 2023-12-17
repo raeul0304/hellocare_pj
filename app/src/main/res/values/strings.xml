@@ -26,7 +26,7 @@
     <string name="academic_record">학력</string>
     <string name="doc_major">진료과목</string>
     <string name="greeting">인사말</string>
-    <strning name="doc_time">진료시간</strning>
+    <string name="doc_time">진료시간</string>
     <string name="doc_time_detail">진료시간을 선택해주세요</string>
 
     <string name="pharmacy">약국명</string>
