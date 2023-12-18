@@ -47,8 +47,7 @@
             android:text="실명을 입력하세요"
             android:textSize="10dp"
             android:textColor="@color/grey"
-            android:layout_alignParentBottom="true"
-            android:onTextChanged="@{text}"/>
+            android:layout_alignParentBottom="true" />
     </RelativeLayout>
     <!-- 생년월일 입력 -->
     <RelativeLayout

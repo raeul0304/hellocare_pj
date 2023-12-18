@@ -4,6 +4,9 @@ plugins {
     id("com.google.gms.google-services")
     id("kotlin-kapt")
 }
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>{
+    kotlinOptions.jvmTarget="1.8"
+}
 
 android {
     namespace = "com.example.hellocare_pj"
@@ -54,6 +57,7 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    buildToolsVersion = "34.0.0"
 }
 
 dependencies {
