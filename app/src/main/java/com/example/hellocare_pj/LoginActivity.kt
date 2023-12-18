@@ -1,5 +1,6 @@
 package com.example.hellocare_pj
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -15,7 +16,7 @@ class LoginActivity: AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        //로그인
         binding.loginbtn.setOnClickListener {
             //로그인 through 이메일, 비밀번호
             val email = binding.idText.text.toString()
@@ -40,6 +41,12 @@ class LoginActivity: AppCompatActivity() {
                         Toast.makeText(baseContext, "로그인 실패", Toast.LENGTH_SHORT).show()
                     }
                 }
+        }
+
+        //회원가입 버튼 클릭 시 화면 이동
+        binding.joinBtn.setOnClickListener {
+            val intent = Intent(this, SigninActivity::class.java)
+            startActivity((intent))
         }
 
 

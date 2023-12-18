@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.hellocare_pj.databinding.ActivitySigindocBinding
 import com.example.hellocare_pj.databinding.ActivitySigninBinding
 import java.util.Calendar
 import java.util.Date
@@ -22,6 +23,7 @@ class SigninActivity : AppCompatActivity(){
     private var pwFlag = false
     private var jobFlag = false
     private var genderFlag = false
+    val usercount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +31,6 @@ class SigninActivity : AppCompatActivity(){
         setContentView(binding.root)
 
         //모두 입력시 회원가입 가능
-
         //이름 2글자 이상 & 특수문자 X 확인
         binding.signnameEditline.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -67,12 +68,38 @@ class SigninActivity : AppCompatActivity(){
         //유형
         binding.signType.setOnCheckedChangeListener{ group, checkedId ->
             when(checkedId){
+                R.id.type_normal -> {
+                    Log.d("hellocare","일반 is selected")
+                    jobFlag = true
+                }
+                R.id.type_doc -> {
+                    Log.d("hellocare", "의사 is selected")
+                    jobFlag = true
+                }
+                R.id.type_phar -> {
+                    Log.d("hellocare", "약사 is selected")
+                    jobFlag = true
+                }
 
             }
         }
 
 
         //성별
+        binding.signGender.setOnCheckedChangeListener{ group, checkedId ->
+            when(checkedId){
+                R.id.gen_female -> {
+                    Log.d("hellocare", "female is selected")
+                    genderFlag = true
+                }
+                R.id.gen_male -> {
+                    Log.d("hellocare", "male is selected")
+                    genderFlag = true
+                }
+            }
+
+        }
+
 
         //회원가입
         binding.signNextbtn.setOnClickListener{
@@ -101,6 +128,40 @@ class SigninActivity : AppCompatActivity(){
                         //changeVisibility("logout")
                     }
                 }
+            //성별
+            val gender = binding.signGender.checkedRadioButtonId
+            //이름
+            val name = binding.signnameEditline.text.toString()
+
+            //생년월일
+
+            //유형
+            val occupation = binding.signGender.checkedRadioButtonId
+            when(occupation){
+                R.id.type_normal -> MyApplication.db.collection("user")
+                    .document(email).update(mapOf(
+                        "name" to name,
+                        "email" to email,
+                        "password" to password,
+                        "gender" to gender
+                        // 생년월일 여기에 적기
+                    ))
+                R.id.type_doc -> MyApplication.db.collection("hospital")
+                    .document("doc1").update(mapOf(
+                        "doc1" to name,
+                        "email" to email,
+                        "password" to password,
+                        "gender" to gender
+                    ))
+                R.id.type_phar -> MyApplication.db.collection("pharmacy")
+                    .document("pharmacist1").update(mapOf(
+                        "pname" to name,
+                        "pemail" to email,
+                        "ppassword" to password,
+                        "pgender" to gender
+                    ))
+            }
+
         }
 
 
