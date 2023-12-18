@@ -18,6 +18,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class MypageFragment : Fragment(R.layout.fragment_mypage) {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,6 +26,9 @@ class MypageFragment : Fragment(R.layout.fragment_mypage) {
         // Inflate the layout for this fragment
         val binding = FragmentMypageBinding.inflate(inflater, container, false)
 
+
         return binding.root
     }
+
+
 }

@@ -8,11 +8,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import com.example.hellocare_pj.databinding.ActivityMainBinding
 import com.example.hellocare_pj.databinding.FragmentCommunityBinding
 import com.example.hellocare_pj.databinding.FragmentMypageBinding
+import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -24,8 +29,8 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.tasks.OnSuccessListener
 
 class CommunityFragment : Fragment(), OnMapReadyCallback {
-    private lateinit var mMap: GoogleMap
 
+    var googleMap: GoogleMap?=null
 
     override fun onCreateView(
 
@@ -40,15 +45,15 @@ class CommunityFragment : Fragment(), OnMapReadyCallback {
         return rootView
     }
 
+    // 지도 객체를 이용할 수 있는 상황이 될 때
+    override fun onMapReady(p0: GoogleMap?) {
+        googleMap = p0
 
-
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
         val marker = LatLng(35.241615, 128.695587)
-        val marker2 = LatLng(37.545064, 126.965697)
-        mMap.addMarker(MarkerOptions().position(marker).title("Marker LAB"))
-        mMap.addMarker(MarkerOptions().position(marker2).title("Marker2"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(marker))
+        googleMap?.addMarker(MarkerOptions().position(marker).title("마커 제목"))
+        googleMap?.moveCamera(CameraUpdateFactory.newLatLng(marker))
     }
+
+
 
 }

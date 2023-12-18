@@ -5,6 +5,10 @@ plugins {
     id("kotlin-kapt")
 }
 
+kotlin {
+    jvmToolchain(8)
+}
+
 android {
     namespace = "com.example.hellocare_pj"
     compileSdk = 34

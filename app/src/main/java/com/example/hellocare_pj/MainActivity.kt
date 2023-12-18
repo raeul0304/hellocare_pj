@@ -33,136 +33,93 @@ import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import androidx.fragment.app.FragmentManager
 
+private const val TAG_HOME = "home_fragment"
+private const val TAG_COMMUNITY = "community_fragment"
+private const val TAG_RESERVATION = "reservation_fragment"
+private const val TAG_MY_PAGE = "mypage_fragment"
 
-class MainActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks,
-    GoogleApiClient.OnConnectionFailedListener, OnMapReadyCallback{
+class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
-
-    lateinit var providerClient: FusedLocationProviderClient
-    lateinit var apiClient: GoogleApiClient
-    var googleMap: GoogleMap?=null
-
-    private lateinit var tabLayout: TabLayout
-    private lateinit var frameLayout: FrameLayout
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setFragment(TAG_HOME, HomeFragment())
 
-
-        frameLayout = findViewById(R.id.mypagetabcontent)
-        tabLayout = findViewById(R.id.mypagetabs)
-
-        tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
-            //val transaction = supportFragmentManager.beginTransaction()
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                when (tab!!.position) {
-                    0 -> supportFragmentManager.beginTransaction().replace(R.id.mypagetabcontent, findViewById(R.id.myinfofrag)).commit()
-                    1 -> supportFragmentManager.beginTransaction().replace(R.id.mypagetabcontent, findViewById(R.id.myinfofrag)).commit()
-                }
+        binding.navigationView.setOnItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
+                R.id.communityFragment-> setFragment(TAG_COMMUNITY, CommunityFragment())
+                R.id.reservationFragment -> setFragment(TAG_RESERVATION, ReservationFragment())
+                R.id.myPageFragment -> setFragment(TAG_MY_PAGE, MypageFragment())
             }
-
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-
-            }
-        })
-
-        //지도 api
-        val requestPermissionLauncher = registerForActivityResult(
-            ActivityResultContracts.RequestMultiplePermissions()
-        ) {
-            if (it.all { permission -> permission.value == true }){
-                apiClient.connect()
-            }else {
-                Toast.makeText(this, "권한 거부..", Toast.LENGTH_SHORT).show()
-            }
+            true
         }
-        (supportFragmentManager.findFragmentById(R.id.map_fragment) as SupportMapFragment)!!.getMapAsync(this)
 
-        providerClient = LocationServices.getFusedLocationProviderClient(this)
-        apiClient = GoogleApiClient.Builder(this)
-            .addApi(LocationServices.API)
-            .addConnectionCallbacks(this)
-            .addOnConnectionFailedListener(this)
-            .build()
+    }
 
-        if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) !== PackageManager.PERMISSION_GRANTED) {
-            requestPermissionLauncher.launch(
-                arrayOf(
-                    android.Manifest.permission.ACCESS_FINE_LOCATION
-                )
-            )
-        }else {
-            // 위치 제공자 준비하기
-            apiClient.connect()
+    private fun setFragment(tag: String, fragment: Fragment) {
+        val manager: FragmentManager = supportFragmentManager
+        val fragTransaction = manager.beginTransaction()
+
+        if (manager.findFragmentByTag(tag) == null){
+            fragTransaction.add(R.id.mainFrameLayout, fragment, tag)
         }
 
 
-    }
+        val home = manager.findFragmentByTag(TAG_HOME)
+        val community = manager.findFragmentByTag(TAG_COMMUNITY)
+        val reservation = manager.findFragmentByTag(TAG_RESERVATION)
+        val mypage = manager.findFragmentByTag(TAG_MY_PAGE)
 
 
-    // 위치 제공자를 사용할 수 있는 상황일 때
-    override fun onConnected(p0: Bundle?) {
-        if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) === PackageManager.PERMISSION_GRANTED){
-            providerClient.lastLocation.addOnSuccessListener(
-                this@MainActivity,
-                object: OnSuccessListener<Location> {
-                    override fun onSuccess(p0: Location?) {
-                        p0?.let {
-                            val latitude = p0.latitude
-                            val longitude = p0.longitude
-                            Log.d("kkang", "$latitude, $longitude")
-                            // 지도 중심 이동하기
-                            moveMap(latitude, longitude)
-                        }
-                    }
-                }
-            )
-            apiClient.disconnect()
+
+        if (home != null){
+            fragTransaction.hide(home)
+        }
+
+        if (community != null){
+            fragTransaction.hide(community)
+        }
+
+        if (reservation != null) {
+            fragTransaction.hide(reservation)
+        }
+
+        if (mypage != null) {
+            fragTransaction.hide(mypage)
         }
 
 
+        if (tag == TAG_HOME) {
+            if (home != null) {
+                fragTransaction.show(home)
+            }
+        }
+        else if (tag == TAG_COMMUNITY) {
+            if (community!=null){
+                fragTransaction.show(community)
+            }
+        }
+        else if (tag == TAG_RESERVATION) {
+            if (reservation != null) {
+                fragTransaction.show(reservation)
+            }
+        }
+        else if (tag == TAG_MY_PAGE){
+            if (mypage != null){
+                fragTransaction.show(mypage)
+            }
+        }
+
+        fragTransaction.commitAllowingStateLoss()
     }
 
-    override fun onConnectionSuspended(p0: Int) {
-        // 위치 제공자를 사용할 수 없을 때
-    }
-
-    override fun onConnectionFailed(p0: ConnectionResult) {
-        // 사용할 수 있는 위치 제공자가 없을 때
-    }
-    // 지도 객체를 이용할 수 있는 상황이 될 때
-    override fun onMapReady(p0: GoogleMap?) {
-        googleMap = p0
-
-        val marker = LatLng(35.241615, 128.695587)
-        googleMap?.addMarker(MarkerOptions().position(marker).title("마커 제목"))
-        googleMap?.moveCamera(CameraUpdateFactory.newLatLng(marker))
-    }
-
-    private fun moveMap(latitude: Double, longitude: Double){
-        val latLng = LatLng(latitude, longitude)
-        val position: CameraPosition = CameraPosition.builder().target(latLng).zoom(16f).build()
-        //지도 중심 이동하기
-        googleMap!!.moveCamera(CameraUpdateFactory.newCameraPosition(position))
-        //마커 옵션
-        val markerOptions = MarkerOptions()
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
-        markerOptions.position(latLng)
-        markerOptions.title("MyLocation")
-        //마커 표시하기
-        googleMap?.addMarker(markerOptions)
-    }
 
     val currentUser = Firebase.auth.currentUser
 
