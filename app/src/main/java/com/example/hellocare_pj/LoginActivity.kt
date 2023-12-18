@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hellocare_pj.databinding.ActivityLoginBinding
 import com.example.hellocare_pj.databinding.ActivitySigninBinding
+import com.example.hellocare_pj.util.myCheckPermission
 
 class LoginActivity: AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
@@ -16,6 +17,7 @@ class LoginActivity: AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        myCheckPermission(this)
         //로그인
         binding.loginbtn.setOnClickListener {
             //로그인 through 이메일, 비밀번호
@@ -30,6 +32,7 @@ class LoginActivity: AppCompatActivity() {
                         if (MyApplication.checkAuth()) {
                             MyApplication.email = email
                             //changevisibility("login") - recyclerview활용해야..
+                            startActivity(Intent(this, MainActivity::class.java))
                         } else {
                             Toast.makeText(
                                 baseContext,
@@ -44,12 +47,9 @@ class LoginActivity: AppCompatActivity() {
         }
 
         //회원가입 버튼 클릭 시 화면 이동
-        binding.joinBtn.setOnClickListener {
-            val intent = Intent(this, SigninActivity::class.java)
-            startActivity((intent))
+        binding.joinBtn.setOnClickListener{
+            startActivity((Intent(this, SigninActivity::class.java)))
         }
-
-
 
     }
 }

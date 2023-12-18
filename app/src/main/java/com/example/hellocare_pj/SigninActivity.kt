@@ -9,6 +9,8 @@ import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.hellocare_pj.MyApplication.Companion.db
+import com.example.hellocare_pj.MyApplication.Companion.email
 import com.example.hellocare_pj.databinding.ActivitySigindocBinding
 import com.example.hellocare_pj.databinding.ActivitySigninBinding
 import java.util.Calendar
@@ -23,7 +25,6 @@ class SigninActivity : AppCompatActivity(){
     private var pwFlag = false
     private var jobFlag = false
     private var genderFlag = false
-    val usercount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +56,7 @@ class SigninActivity : AppCompatActivity(){
                             nameFlag = true
                         }
                     }
-                    flagCheck()
+                   // flagCheck()
                 }
             }
         })
@@ -65,47 +66,34 @@ class SigninActivity : AppCompatActivity(){
         val defaultMonth = currentDate.get(Calendar.MONTH)
         val defaultDay = currentDate.get(Calendar.DAY_OF_MONTH)
 
-        //유형
-        binding.signType.setOnCheckedChangeListener{ group, checkedId ->
-            when(checkedId){
-                R.id.type_normal -> {
-                    Log.d("hellocare","일반 is selected")
-                    jobFlag = true
-                }
-                R.id.type_doc -> {
-                    Log.d("hellocare", "의사 is selected")
-                    jobFlag = true
-                }
-                R.id.type_phar -> {
-                    Log.d("hellocare", "약사 is selected")
-                    jobFlag = true
-                }
+        val email = binding.idEditline.text.toString()
+        val password = binding.pwEditline.text.toString()
+        val name = binding.signnameEditline.text.toString()
+        val occupation = binding.signType.checkedRadioButtonId
 
-            }
+        when(occupation) {
+            R.id.type_normal -> db.collection("normal")
+                .document(email).update(mapOf(
+                    "email" to email,
+                    "name" to name
+                ))
+            R.id.type_doc -> db.collection("hospital")
+                .document("hos1").collection("doc").document("doc1")
+                .update(mapOf(
+                    "email" to email,
+                    "name"  to name
+                ))
+            R.id.type_phar -> db.collection("pharmacy")
+                .document("pharmacy1").collection("pharmacist").document("p1")
+                .update(mapOf(
+                    "email" to email,
+                    "name"  to name
+                ))
         }
-
-
-        //성별
-        binding.signGender.setOnCheckedChangeListener{ group, checkedId ->
-            when(checkedId){
-                R.id.gen_female -> {
-                    Log.d("hellocare", "female is selected")
-                    genderFlag = true
-                }
-                R.id.gen_male -> {
-                    Log.d("hellocare", "male is selected")
-                    genderFlag = true
-                }
-            }
-
-        }
-
 
         //회원가입
         binding.signNextbtn.setOnClickListener{
             //이메일, 비밀번호 회원가입
-            val email = binding.idEditline.text.toString()
-            val password = binding.pwEditline.text.toString()
             MyApplication.auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     binding.idEditline.text.clear()
@@ -128,40 +116,9 @@ class SigninActivity : AppCompatActivity(){
                         //changeVisibility("logout")
                     }
                 }
-            //성별
-            val gender = binding.signGender.checkedRadioButtonId
-            //이름
-            val name = binding.signnameEditline.text.toString()
 
-            //생년월일
 
-            //유형
-            val occupation = binding.signGender.checkedRadioButtonId
-            when(occupation){
-                R.id.type_normal -> MyApplication.db.collection("user")
-                    .document(email).update(mapOf(
-                        "name" to name,
-                        "email" to email,
-                        "password" to password,
-                        "gender" to gender
-                        // 생년월일 여기에 적기
-                    ))
-                R.id.type_doc -> MyApplication.db.collection("hospital")
-                    .document("doc1").update(mapOf(
-                        "doc1" to name,
-                        "email" to email,
-                        "password" to password,
-                        "gender" to gender
-                    ))
-                R.id.type_phar -> MyApplication.db.collection("pharmacy")
-                    .document("pharmacist1").update(mapOf(
-                        "pname" to name,
-                        "pemail" to email,
-                        "ppassword" to password,
-                        "pgender" to gender
-                    ))
             }
-
         }
 
 
@@ -194,7 +151,6 @@ class SigninActivity : AppCompatActivity(){
     }
 
     //모든 flag가 true 일 때 회원가입 버튼 활성화
-    fun flagCheck(){
-        binding.signNextbtn.isEnabled = nameFlag && idFlag && pwFlag
-    }
-}
+ //   fun flagCheck(){
+   //     binding.signNextbtn.isEnabled = nameFlag && idFlag && pwFlag
+    //}
