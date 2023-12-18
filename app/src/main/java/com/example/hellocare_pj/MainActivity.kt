@@ -7,6 +7,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -46,11 +47,35 @@ class MainActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks,
     private lateinit var tabLayout: TabLayout
     private lateinit var frameLayout: FrameLayout
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
+        frameLayout = findViewById(R.id.mypagetabcontent)
+        tabLayout = findViewById(R.id.mypagetabs)
+
+        tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
+            //val transaction = supportFragmentManager.beginTransaction()
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                when (tab!!.position) {
+                    0 -> supportFragmentManager.beginTransaction().replace(R.id.mypagetabcontent, findViewById(R.id.myinfofrag)).commit()
+                    1 -> supportFragmentManager.beginTransaction().replace(R.id.mypagetabcontent, findViewById(R.id.myinfofrag)).commit()
+                }
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+
+            }
+        })
 
         //지도 api
         val requestPermissionLauncher = registerForActivityResult(
