@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".TypeoneFragment">
 
     <include layout="@layout/hellocare_titleicon" />
 
     <fragment
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:id="@+id/map_fragment"
+        android:id="@+id/map_fragment2"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_alignParentLeft="true"
@@ -33,18 +33,19 @@
                 android:id="@+id/info_text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="연세세림내과의원"
+                android:text="공덕연세이비인후과의원"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
             <TextView
                 android:id="@+id/info_text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="02-706-1199"
+                android:text="02-2197-1707"
                 android:textColor="@color/black"
                 android:textSize="10dp" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll2"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:orientation="vertical"
@@ -55,14 +56,36 @@
                 android:id="@+id/info_text3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="명내과의원"
+                android:text="연세소리이비인후과"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
             <TextView
                 android:id="@+id/info_text4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="02-714-1675"
+                android:text="02-701-1199"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:background="@color/lightblue"
+            android:layout_below="@+id/ll2">
+            <TextView
+                android:id="@+id/info_text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="조앤필이비인후과의원"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+            <TextView
+                android:id="@+id/info_text6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="02-6401-1111"
                 android:textColor="@color/black"
                 android:textSize="10dp" />
         </LinearLayout>
