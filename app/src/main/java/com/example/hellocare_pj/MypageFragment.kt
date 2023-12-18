@@ -17,7 +17,8 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ReservationFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MypageFragment : Fragment() {
+class MypageFragment : Fragment(R.layout.fragment_mypage) {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,6 +26,9 @@ class MypageFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding = FragmentMypageBinding.inflate(inflater, container, false)
 
+
         return binding.root
     }
+
+
 }

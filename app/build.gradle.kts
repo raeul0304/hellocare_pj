@@ -8,6 +8,10 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>{
     kotlinOptions.jvmTarget="1.8"
 }
 
+kotlin {
+    jvmToolchain(8)
+}
+
 android {
     namespace = "com.example.hellocare_pj"
     compileSdk = 34
