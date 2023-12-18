@@ -1,5 +1,6 @@
 package com.example.hellocare_pj
 
+import android.Manifest
 import android.content.Intent
 import android.location.Location
 import android.content.pm.PackageManager
@@ -36,13 +37,14 @@ import com.google.firebase.ktx.Firebase
 import androidx.fragment.app.FragmentManager
 
 private const val TAG_HOME = "home_fragment"
-private const val TAG_COMMUNITY = "community_fragment"
+private const val TAG_COMMUNITY = "typeone_fragment"
 private const val TAG_RESERVATION = "reservation_fragment"
 private const val TAG_MY_PAGE = "mypage_fragment"
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         binding.navigationView.setOnItemSelectedListener { item ->
             when(item.itemId) {
                 R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
-                R.id.communityFragment-> setFragment(TAG_COMMUNITY, CommunityFragment())
+                R.id.communityFragment-> setFragment(TAG_COMMUNITY, TypeoneFragment())
                 R.id.reservationFragment -> setFragment(TAG_RESERVATION, ReservationFragment())
                 R.id.myPageFragment -> setFragment(TAG_MY_PAGE, MypageFragment())
             }
@@ -62,6 +64,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
 
     private fun setFragment(tag: String, fragment: Fragment) {
         val manager: FragmentManager = supportFragmentManager

@@ -90,7 +90,6 @@ dependencies {
     // https://firebase.google.com/docs/android/setup#available-libraries
     implementation("com.google.firebase:firebase-auth-ktx:22.3.0")
 
-
     implementation("com.google.android.gms:play-services-maps:17.0.0")
     implementation("com.google.android.gms:play-services-location:17.0.0")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
