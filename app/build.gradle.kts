@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
+    id("kotlin-kapt")
 }
 
 android {
@@ -94,4 +95,14 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation ("com.google.android.material:material:1.1.0")
+
+    //로그인 기능 구현
+    implementation("com.google.firebase:firebase-firestore-ktx:24.10.0")
+    implementation("com.google.firebase:firebase-storage-ktx:20.3.0")
+    implementation("com.github.bumptech.glide:glide:4.13.2")
+    implementation("com.firebaseui:firebase-ui-storage:8.0.1")
+    implementation("com.github.bumptech.glide:compiler:4.13.2")
+
+    implementation("com.google.firebase:firebase-messaging-ktx:23.4.0")
+    implementation("com.google.firebase:firebase-analytics-ktx:21.5.0")
 }
