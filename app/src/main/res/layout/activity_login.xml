@@ -113,7 +113,7 @@
 
     <!--로그인 버튼-->
     <Button
-        android:id="@+id/enter"
+        android:id="@+id/loginbtn"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"

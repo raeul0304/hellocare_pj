@@ -173,7 +173,8 @@
                 android:layout_height="26dp"
                 android:layout_weight="1"
                 android:text="일반"
-                android:textSize="13sp"/>
+                android:textSize="13sp"
+                android:onClick="onJobRadioBtnClicked"/>
 
             <RadioButton
                 android:id="@+id/type_doc"
@@ -182,7 +183,8 @@
                 android:layout_marginBottom="1dp"
                 android:layout_weight="1"
                 android:text="의사"
-                android:textSize="13sp"/>
+                android:textSize="13sp"
+                android:onClick="onJobRadioBtnClicked"/>
 
             <RadioButton
                 android:id="@+id/type_phar"
@@ -190,7 +192,8 @@
                 android:layout_height="26dp"
                 android:layout_weight="1"
                 android:text="약사"
-                android:textSize="13sp"/>
+                android:textSize="13sp"
+                android:onClick="onJobRadioBtnClicked"/>
         </RadioGroup>
     </RelativeLayout>
 
@@ -228,7 +231,8 @@
                 android:layout_height="26dp"
                 android:layout_weight="2"
                 android:text="여성"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:onClick="onGenderBtnClicked"/>
 
             <RadioButton
                 android:id="@+id/gen_male"
@@ -237,7 +241,8 @@
                 android:layout_marginBottom="1dp"
                 android:layout_weight="5"
                 android:text="남성"
-                android:textSize="13sp"/>
+                android:textSize="13sp"
+                android:onClick="onGenderBtnClikced"/>
         </RadioGroup>
     </RelativeLayout>
 
