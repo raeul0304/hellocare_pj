@@ -134,14 +134,14 @@ class SigninActivity : AppCompatActivity(){
         return false
     }
     //영문자 존재 여부를 확인하는 메소드
-    private fun hasAlphabet(string: String):Boolean{
-        for(i in string.indices){
-            if(Character.isAlphabetic(string[i].code)){
-                return true
-            }
-        }
-        return false
-    }
+   // private fun hasAlphabet(string: String):Boolean{
+     //   for(i in string.indices){
+       //     if(Character.isAlphabetic(string[i].code)){
+         //       return true
+          //  }
+       // }
+        //return false
+   // }
     //특수 문자 없이 empty(2글자 이상)인지 아닌지 확인 메소드
     private fun nullCheck(name: String):Boolean{
         if((!hasSpecialCharacter(name)) and (name.length>=2)){
