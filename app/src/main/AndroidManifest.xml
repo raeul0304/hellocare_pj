@@ -44,7 +44,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <activity android:name=".SigninActivity"
             android:exported="false"/>
         <activity
@@ -56,6 +55,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyASJed6NNYKpj-oRLafPRI3NCou2UIKEcE" />
