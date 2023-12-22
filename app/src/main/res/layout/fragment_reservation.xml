@@ -6,7 +6,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <include layout="@layout/hellocare_titleicon"/>
+    <include
+        android:id="@+id/include"
+        layout="@layout/hellocare_titleicon" />
     <CalendarView
         android:id="@+id/calenderview"
         android:layout_width="wrap_content"
@@ -19,47 +21,139 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.widget.Button
-        android:id="@+id/btn1"
-        android:layout_width="84dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="15dp"
-        android:text="09:00"
-        app:layout_constraintEnd_toStartOf="@+id/btn2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calenderview" />
-
-    <android.widget.Button
-        android:id="@+id/btn2"
-        android:layout_width="84dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="15dp"
-        android:text="10:00"
-        app:layout_constraintEnd_toStartOf="@+id/btn3"
-        app:layout_constraintTop_toBottomOf="@+id/calenderview" />
-
-    <android.widget.Button
-        android:id="@+id/btn3"
-        android:layout_width="84dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="15dp"
-        android:text="11:00"
-        app:layout_constraintEnd_toStartOf="@+id/btn4"
-        app:layout_constraintTop_toBottomOf="@+id/calenderview" />
-
-    <android.widget.Button
-        android:id="@+id/btn4"
-        android:layout_width="84dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="16dp"
-        android:text="12:00"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="430dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calenderview" />
+        app:layout_constraintStart_toStartOf="parent">
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:text="09:00"/>
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:layout_marginLeft="12dp"
+            android:text="09:30"/>
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:layout_marginLeft="12dp"
+            android:text="10:00"/>
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:layout_marginLeft="12dp"
+            android:text="10:30"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="480dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:text="11:00"/>
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:layout_marginLeft="12dp"
+            android:text="11:30"/>
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:layout_marginLeft="12dp"
+            android:text="12:00"/>
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:layout_marginLeft="12dp"
+            android:text="12:30"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="530dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:enabled="false"
+            android:text="13:00"/>
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:enabled="false"
+            android:layout_marginLeft="12dp"
+            android:text="13:30"/>
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:layout_marginLeft="12dp"
+            android:text="14:00"/>
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:layout_marginLeft="12dp"
+            android:text="14:30"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="580dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:text="15:00"/>
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:layout_marginLeft="12dp"
+            android:text="15:30"/>
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:layout_marginLeft="12dp"
+            android:text="16:00"/>
+        <android.widget.Button
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:layout_marginLeft="12dp"
+            android:text="16:30"/>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

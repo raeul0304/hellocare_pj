@@ -71,7 +71,7 @@
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_toEndOf="@+id/pw_image"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:hint="@string/sign_pw"
             android:textColor="@color/black"
             android:textSize="13sp"/>

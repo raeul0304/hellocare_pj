@@ -1,13 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <include layout="@layout/hellocare_titleicon" />
+
     <fragment
-        class="com.google.android.gms.maps.SupportMapFragment"
-        android:id="@+id/map_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:id="@+id/map_fragment1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="250dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="55dp"/>
+
+    <!--지도에서 불러온 병원 정보-->
+    <RelativeLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loc_map"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="320dp">
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/lightblue"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/info_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="연세세림내과의원"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+            <TextView
+                android:id="@+id/info_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="02-706-1199"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:background="@color/lightblue"
+            android:layout_below="@+id/ll1">
+            <TextView
+                android:id="@+id/info_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="명내과의원"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+            <TextView
+                android:id="@+id/info_text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="02-714-1675"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
+        </LinearLayout>
+    </RelativeLayout>
 
 </FrameLayout>
