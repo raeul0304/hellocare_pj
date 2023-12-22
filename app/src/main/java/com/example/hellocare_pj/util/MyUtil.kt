@@ -14,6 +14,9 @@ import java.util.Date
 fun myCheckPermission(activity: AppCompatActivity) {
 
 
+    val readPermission = Manifest.permission.READ_EXTERNAL_STORAGE
+    val writePermission = Manifest.permission.WRITE_EXTERNAL_STORAGE
+
     val requestPermissionLauncher = activity.registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) {
@@ -26,8 +29,18 @@ fun myCheckPermission(activity: AppCompatActivity) {
         }
 
     }
-    requestPermissionLauncher.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-    requestPermissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
+    if (ContextCompat.checkSelfPermission(
+            activity, readPermission
+        ) !== PackageManager.PERMISSION_GRANTED
+    ) {
+        requestPermissionLauncher.launch(readPermission)
+    }
+    if (ContextCompat.checkSelfPermission(
+            activity,writePermission
+    ) !== PackageManager.PERMISSION_GRANTED
+    ) {
+        requestPermissionLauncher.launch(writePermission)
+    }
 }
 
 fun dateToString(date: Date): String {
