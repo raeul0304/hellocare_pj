@@ -121,16 +121,16 @@ class MapActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks,
         googleMap = p0
 
 
-        //val marker = LatLng(37.5405, 126.9619)
-        //googleMap?.addMarker(MarkerOptions().position(marker).title("연세세림내과의원").snippet("02-706-1199"))
-        //val marker2 = LatLng(37.5399, 126.9611)
-        //googleMap?.addMarker(MarkerOptions().position(marker2).title("명내과의원").snippet("02-714-1675"))
+        val marker = LatLng(37.5405, 126.9619)
+        googleMap?.addMarker(MarkerOptions().position(marker).title("연세세림내과의원").snippet("02-706-1199"))
+        val marker2 = LatLng(37.5399, 126.9611)
+        googleMap?.addMarker(MarkerOptions().position(marker2).title("명내과의원").snippet("02-714-1675"))
 
-        //val builder = CameraPosition.Builder()
-        //builder.target(marker)
-        //builder.zoom(16F)
-        //val position = builder.build()
-        //googleMap?.moveCamera(CameraUpdateFactory.newCameraPosition(position))
-        //googleMap?.moveCamera(CameraUpdateFactory.newLatLng(marker))
+        val builder = CameraPosition.Builder()
+        builder.target(marker)
+        builder.zoom(16F)
+        val position = builder.build()
+        googleMap?.moveCamera(CameraUpdateFactory.newCameraPosition(position))
+        googleMap?.moveCamera(CameraUpdateFactory.newLatLng(marker))
     }
 }

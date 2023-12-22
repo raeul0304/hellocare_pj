@@ -8,7 +8,7 @@
 
     <item
         android:id="@+id/communityFragment"
-        android:title="병원정보"
+        android:title="건강정보통"
         android:icon="@drawable/ic_community"/>
 
     <item
