@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         binding.navigationView.setOnItemSelectedListener { item ->
             when(item.itemId) {
                 R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
-                R.id.communityFragment-> setFragment(TAG_COMMUNITY, TypeoneFragment())
+                R.id.communityFragment-> setFragment(TAG_COMMUNITY, CommunityFragment())
                 R.id.reservationFragment -> setFragment(TAG_RESERVATION, ReservationFragment())
                 R.id.myPageFragment -> setFragment(TAG_MY_PAGE, MypageFragment())
             }

@@ -26,6 +26,13 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         })
 
+        binding.btnMap2.setOnClickListener(View.OnClickListener {
+            val intent =
+                Intent(activity, MaptwoActivity::class.java) //fragment라서 activity intent와는 다른 방식
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
+        })
+
         return binding.root
     }
 

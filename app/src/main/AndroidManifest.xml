@@ -58,6 +58,9 @@
         <activity
             android:name=".MapActivity"
             android:exported="false"/>
+        <activity
+            android:name=".MaptwoActivity"
+            android:exported="false"/>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyASJed6NNYKpj-oRLafPRI3NCou2UIKEcE" />

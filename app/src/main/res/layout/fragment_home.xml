@@ -9,11 +9,26 @@
     tools:context=".HomeFragment">
 
     <include layout="@layout/hellocare_titleicon" />
-    <Button
-        android:id="@+id/btn_map"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="지도"/>
+        android:gravity="center"
+        android:orientation="horizontal">
+        <android.widget.Button
+            android:id="@+id/btn_map"
+            android:layout_width="90dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:text="내과"/>
+        <android.widget.Button
+            android:id="@+id/btn_map2"
+            android:layout_width="90dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@drawable/btn_click_color"
+            android:layout_marginLeft="12dp"
+            android:text="이비인후과"/>
+    </LinearLayout>
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="368dp"
