@@ -34,6 +34,8 @@
                 android:id="@+id/info_text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
                 android:text="연세세림내과의원"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -41,6 +43,8 @@
                 android:id="@+id/info_text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
                 android:text="02-706-1199"
                 android:textColor="@color/black"
                 android:textSize="10dp" />
@@ -56,6 +60,8 @@
                 android:id="@+id/info_text3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
                 android:text="명내과의원"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -63,6 +69,8 @@
                 android:id="@+id/info_text4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
                 android:text="02-714-1675"
                 android:textColor="@color/black"
                 android:textSize="10dp" />
