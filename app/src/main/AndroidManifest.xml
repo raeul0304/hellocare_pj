@@ -41,6 +41,8 @@
             android:name="com.google.firebase.message.default_notification_channel_id"
             android:value="fcm_default_channel" />
 
+        <activity android:name=".DetailActivity"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="false" />
