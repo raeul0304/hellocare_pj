@@ -33,6 +33,13 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         })
 
+        binding.hboardbtn.setOnClickListener(View.OnClickListener {
+            val intent=
+                Intent(activity, HealthActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
+        })
+
         return binding.root
     }
 

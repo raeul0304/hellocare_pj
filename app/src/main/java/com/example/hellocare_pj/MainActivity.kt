@@ -64,9 +64,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
-
-
     private fun setFragment(tag: String, fragment: Fragment) {
         val manager: FragmentManager = supportFragmentManager
         val fragTransaction = manager.beginTransaction()

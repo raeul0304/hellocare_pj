@@ -48,10 +48,10 @@
             android:exported="false" />
         <activity android:name=".SigninActivity"
             android:exported="false"/>
-        <activity android:name=".LoginActivity"
+        <activity android:name=".HealthActivity"
             android:exported="false"/>
         <activity
-            android:name=".HealthActivity"
+            android:name=".LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
