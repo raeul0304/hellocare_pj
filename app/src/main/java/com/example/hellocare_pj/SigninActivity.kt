@@ -77,6 +77,8 @@ class SigninActivity : AppCompatActivity() {
                 }
             }
         })
+
+
         //생년월일
         val currentDate = Calendar.getInstance()
         val defaultYear = currentDate.get(Calendar.YEAR)
@@ -88,6 +90,8 @@ class SigninActivity : AppCompatActivity() {
             //이메일, 비밀번호 회원가입
             val email = binding.idEditline.text.toString()
             val password = binding.pwEditline.text.toString()
+            val name = binding.signnameEditline.text.toString()
+
             MyApplication.auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     binding.idEditline.text.clear()
@@ -104,6 +108,7 @@ class SigninActivity : AppCompatActivity() {
                                     //changeVisibility("logout") - 리사이클러뷰, 어댑터 사용해야
                                     idFlag = true
                                     pwFlag = true
+
                                 } else {
                                     Toast.makeText(baseContext, "메일 발송 실패", Toast.LENGTH_SHORT)
                                         .show()

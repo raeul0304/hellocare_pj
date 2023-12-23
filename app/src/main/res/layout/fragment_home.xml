@@ -19,15 +19,19 @@
         <android.widget.Button
             android:id="@+id/btn_map"
             android:layout_width="90dp"
-            android:layout_height="42dp"
+            android:layout_height="90dp"
             android:backgroundTint="@drawable/btn_click_color"
+            android:background="@drawable/roundrectangle_style"
+            android:drawableTop="@drawable/stomachsize"
             android:text="내과"/>
         <android.widget.Button
             android:id="@+id/btn_map2"
             android:layout_width="90dp"
-            android:layout_height="42dp"
+            android:layout_height="90dp"
             android:backgroundTint="@drawable/btn_click_color"
+            android:background="@drawable/roundrectangle_style"
             android:layout_marginLeft="12dp"
+            android:drawableTop="@drawable/earsize"
             android:text="이비인후과"/>
     </LinearLayout>
     <ImageView
@@ -37,5 +41,23 @@
         android:layout_gravity="center"
         android:layout_height="300dp"
         app:srcCompat="@drawable/type" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp">
+        <android.widget.Button
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:text="더보기"
+            android:background="@color/white"
+            android:layout_marginLeft="350dp"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/healthboardimg"/>
+    </LinearLayout>
+
 
 </LinearLayout>
